@@ -1,0 +1,211 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important; 
+    /* Sets the main font of the whole page to "Plus Jakarta Sans".
+       Falls back to a generic sans-serif font if it's unavailable.
+       The !important makes sure this font overrides other font settings. */
+
+    display: flex;  
+    /* Turns the body into a flex container, so its direct children
+       can be arranged using flexbox rules. */
+
+    flex-direction: column;  
+    /* Aligns body children (like header, main, footer) in a vertical stack. */
+
+    min-height: 100vh;  
+    /* Ensures the body is at least the full height of the viewport,
+       so it always stretches to fill the screen even if content is small. */
+}
+
+.container {
+    flex: 1;  
+    /* Makes the container grow and take up all available remaining space
+       inside the body’s flex layout.
+       Useful for pushing the footer to the bottom of the page. */
+}
+
+
+/* NAVBAR */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+f-info-liks a{
+    text-decoration:none;
+    color:#222222;
+}
+f-info-liks a:hover {
+    text-decoration: underline;
+
+}
+
+/* Applies same styles to .f-info-links, .f-info-socials, and .f-info-brand */
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;              /* Each section takes full width */
+    display: flex;            /* Use flexbox layout for easy alignment */
+    align-items: center;      /* Vertically align items to the center */
+    justify-content: center;  /* Horizontally align items to the center */
+}
+
+/* Styles for icons inside .f-info-socials */
+.f-info-socials i {
+    font-size: 1.2rem;        /* Set icon size */
+    margin-right: 1rem;       /* Add spacing between icons */
+}
+
+/* Styles for the overall footer container */
+.f-info {
+    text-align: center;       /* Center text content */
+    height: 8rem;             /* Fixed height of the footer (8rem = 8 x root font-size) */
+    background-color: #ebebeb;/* Light gray background */
+    display: flex;            /* Flexbox for layout */
+    flex-wrap: wrap;          /* Allow items to wrap on smaller screens */
+    justify-content: center;  /* Center items horizontally */
+    align-items: space-evenly;/* ⚠️ Invalid value → should be `align-items: center;` 
+                                 (align-items doesn’t accept `space-evenly`) */
+}
+
+/* cards */
+
+.listing-card {
+    border: none !important;
+    margin-bottom:2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: coer !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* card effect */
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* new page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Edit page */
+.edit-btn {
+     background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* show page */
+
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.preview-img {
+    width: 260px;          /* 👈 smaller size */
+    height: auto;
+    border-radius: 6px;    /* rounded corners */
+    object-fit: cover;     /* keeps image proportions */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2); /* soft shadow for nice look */
+  }
+
+.active-filter {
+  opacity: 1 !important;
+  color: #000;
+  border-bottom: 3px solid #000;
+  transition: 0.3s ease;
+}
+
+.active-filter i {
+  color: #000;
+}
+
+  /* Horizontal scroll (Airbnb style), simple and clean */
+  #filters {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide on Firefox */
+    display: flex;
+    align-items: center;
+  }
+
+  #filters::-webkit-scrollbar {
+    display: none; /* Hide on Chrome/Safari */
+  }
+
+  .filter {
+    text-align: center;
+    opacity: 0.7;
+    min-width: 80px;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .filter p {
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+
+  /* Active filter underline */
+  .active-filter {
+    opacity: 1 !important;
+    border-bottom: 2px solid black;
+    padding-bottom: 4px;
+  }
+
+/* for the tax to be hidden */
+.tax-info{
+    display: none;
+}
+
+.tax-toggle{
+    border:0.5px solid black;
+    border-radius: 1rem; 
+    padding: 1rem;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+}

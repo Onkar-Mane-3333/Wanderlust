@@ -1,0 +1,132 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<!-- AIRBNB STYLE — CLEAN, NO SHADOW OR BOX -->
+<div class="container-fluid px-3 pt-3">
+  <div  class="d-flex flex-row gap-4 align-items-center "> <!-- this d-flex is used to keep this icons allign-->
+    <div id="filters">
+    <a href="/listings/category/Trending" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Trending' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-fire fa-lg"></i>
+      <p>Trending</p>
+    </a>
+
+    <a href="/listings/category/Rooms" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Rooms' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-bed fa-lg"></i>
+      <p>Rooms</p>
+    </a>
+
+    <a href="/listings/category/Iconic cities" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Iconic cities' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-mountain-city fa-lg"></i>
+      <p>Iconic Cities</p>
+    </a>
+
+    <a href="/listings/category/Mountains" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Mountains' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-mountain fa-lg"></i>
+      <p>Mountains</p>
+    </a>
+
+    <a href="/listings/category/Castles" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Castles' ? 'active-filter' : '' %>">
+      <i class="fa-brands fa-fort-awesome fa-lg"></i>
+      <p>Castles</p>
+    </a>
+
+    <a href="/listings/category/Amazing Pools" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Amazing Pools' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-person-swimming fa-lg"></i>
+      <p>Pools</p>
+    </a>
+
+    <a href="/listings/category/Camping" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Camping' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-campground fa-lg"></i>
+      <p>Camping</p>
+    </a>
+
+    <a href="/listings/category/Farms" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Farms' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-cow fa-lg"></i>
+      <p>Farms</p>
+    </a>
+
+    <a href="/listings/category/Arctic" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Arctic' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-snowflake fa-lg"></i>
+      <p>Arctic</p>
+    </a>
+    <a href="/listings/category/Arctic" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Arctic' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-snowflake fa-lg"></i>
+      <p>Arctic</p>
+    </a>
+    <a href="/listings/category/Arctic" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Arctic' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-snowflake fa-lg"></i>
+      <p>Arctic</p>
+    </a>
+    <a href="/listings/category/Arctic" 
+       class="filter text-decoration-none text-dark <%= categoryName === 'Arctic' ? 'active-filter' : '' %>">
+      <i class="fa-solid fa-snowflake fa-lg"></i>
+      <p>Arctic</p>
+    </a>
+    </div>
+
+    <!--  TAX SWITCH (instead of filter button) -->
+    <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+      <label class="form-check-label small" for="switchCheckDefault">
+        Display total 
+      </label>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- </div> -->
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 mt-3">
+    <% for (let listing of allListings) { %>
+        <a href="/Listings/<%= listing._id%>" class="listing-link">
+        <div class="col">
+            <div class="card h-100 listing-card">
+                <img src="<%= listing.image.url %>" 
+                class="card-img-top" 
+                alt="listing_image" 
+                style="height: 20rem; object-fit: cover;">  <!-- we have added url as we have changed the lising image -->
+                <div class="card-img-overlay"></div>      <!-- it is used to write on image  -->
+
+            <div class="card-body">
+                <p class="card-text">
+                <b><%= listing.title %></b> <br>
+                &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
+                <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
+                </p>
+            </div>
+            </div>
+        </div>
+      </a>
+    <% } %>
+  </div>
+
+<!-- it is the switch which is just t0 check the clicks we are doing-->
+<!-- inline is writtten so that data should be displayes on the same line-->
+<!-- this is used to display the tax when we click the switch and in the inline format -->
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");  
+    for(info of taxInfo){
+      if(info.style.display != "inline"){ 
+        info.style.display = "inline";
+      }else{
+        info.style.display = "none";
+      }
+    }
+  });
+</script>

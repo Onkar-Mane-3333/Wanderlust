@@ -1,0 +1,26 @@
+<!--//here we have used the if statement then also it show alert as session is in the form of the array form so the error must be shown when successs.length value is grater then the 0. -->
+
+<% if(success && success.length){ %> <!--//this if is been used so that it doesmot always show the success alert on the fage when there is succes then only it show the success alert otherwise it should be blank -->
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+    <%= success %> <!-- //this is the variable which is been used in the app.js .it is the key wich help to display the value -->
+    <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="close">
+
+    </button>
+</div>
+<% } %>
+
+<% if(error && error.length){ %>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= error %>
+        <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        arial-label="close">
+        </button>
+    </div>
+<% } %>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top"> <!-- here navbar-expand-md is used to see how the navbar will look when it is full screen and medium screen and at small screen it will will be appearing in three line  -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/Listings">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto"> <!--ms-auto help in placing the value on the right side -->
+        <a class="nav-link" href="/Listings/new">Airbnb your home</a>
+        <% if(!currUser) { %> <!--here currUser has stored the value of req.user it help as if the useer is not signup or logedin then show the signup and login link on the page -->
+          <a class="nav-link" aria-current="page" href="/signup"><b>SignUp</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+        <% if(currUser) { %>  <!-- when the user data is store in the currUser or logedin the show the logout page -->
+          <a class="nav-link" href="/logout">Log out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
