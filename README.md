@@ -19,8 +19,8 @@ It allows users to register, log in, create travel listings, view listings, add 
 How to Run
 1. git clone https://github.com/Onkar-Mane-3333/Wanderlust
 2. cd Wanderlust
-3. npm install
-4. npm start
+3. npm install(Installs all required packages for your project.Reads them from package.json)
+4. npm start(Runs the command defined under "start" in package.json)
 5. Open http://localhost:8080/Listings in your browser
 
 Note:
